@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: python-script-pod
+spec:
+  containers:
+  - name: python-container
+    image: python:3.9
+    command: ["python", "-c"]
+    args:
+    - |
+      import script
+      print(script.soma(5, 3))
+  restartPolicy: Never
